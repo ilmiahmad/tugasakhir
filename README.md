@@ -22,7 +22,16 @@ Wearable HAR from PPG is limited by power and inference cost. This project imple
 | RTL simulation accuracy (rate 1 / rate 2 / latency 1) | 81.64 % / 84.4 % / 67.0 % |
 | FPGA accuracy (Q2.6, rate model 1) | **81.60 %** (1.07 % below offline) |
 | Mean inference latency | 15.608 ms (15.522 ms PS I/O + 0.086 ms SNN core on PL) |
-| Mean energy per inference | **0.462 mJ** (2.5 % lower than SNN on the PS) |
+| Mean energy per inference | **0.462 mJ** (SNN in software on the PS: 1.18 mJ) |
+
+## Architecture
+See **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** for the full SNN architecture (preprocessing → spike encoding → LIF neuron / layer / network RTL → Zynq AXI integration), with the thesis figures, FSMs, quantization and measurement setup.
+
+![System overview](docs/images/system_overview.png)
+
+```
+PPG+gyro -> MAC preprocessing -> spike encoding (PS) -> AXI-Lite -> SNN RTL (PL) -> spike counter -> argmax (PS)
+```
 
 ## Repository layout
 ```
@@ -30,6 +39,7 @@ training/   snnTorch notebook, trained models (.pth), quantized weights (.coe)
 rtl/        SystemVerilog modules, Python network generator, cocotb tests, generated networks
 fpga/       Vivado block-design/IP tcl, RTL sources, custom AXI IP wrapper, bitstream (+hwh), PYNQ test notebook
 results/    Raw power measurements (CPU, CPU+FPGA) and summary workbook
+docs/       Architecture write-up and thesis figures
 xschem/     Earlier analog CMOS (sky130) LIF neuron / Schmitt-trigger schematics from the original proposal
 ```
 
