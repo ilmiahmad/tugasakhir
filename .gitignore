@@ -1,0 +1,69 @@
+# ---- Thesis documents / personal data (never commit) ----
+*.pdf
+*.docx
+*.doc
+*.pptx
+*.zip
+*.7z
+*.tar*
+Proposal*
+BUKU*
+Buku*
+poster*
+POMITS*
+*.env
+.env*
+*.pem
+*.key
+secrets*
+*.local
+
+# ---- Third-party dataset (download separately, see training/data/README.md) ----
+training/data/*
+!training/data/README.md
+gyro_acc_ppg/
+*.mat
+
+# ---- Large / regenerable artifacts ----
+*.npy
+*.npz
+sim_build/
+*.gch
+*.o
+*.d
+*.vcd
+*.fst
+*.gtkw
+results.xml
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ---- Vivado generated output (rebuild from fpga/*.tcl) ----
+*.runs/
+*.cache/
+*.gen/
+*.sim/
+*.ip_user_files/
+*.tmp/
+*.hw/
+*.xpr
+*.jou
+*.log
+*.str
+*.wdb
+*.wcfg
+*.dcp
+.Xil/
+
+# ---- Editor / OS / tooling ----
+.vscode/
+.idea/
+.DS_Store
+.claude/
+
+# ---- Explicitly keep ----
+!fpga/*.bit
+!fpga/*.hwh
+!training/models/*.pth
+!**/*.coe
