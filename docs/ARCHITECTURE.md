@@ -161,6 +161,10 @@ Platform: **Antminer S9 control board, Zynq-7000 XC7Z010-1CLG400C** (dual Cortex
 
 `SNN_IP_0` is a custom AXI-Lite slave (`fpga/axi_ip/`) wrapping `SNN.sv`, connected to the PS through the AXI interconnect (`fpga/design_2_32_64_3.tcl`). From PYNQ (`fpga/pynq/snn_test_FPGA.ipynb`), the PS writes one 32-bit word per timestep (packed 32-input spikes) at offsets `0 … 4·(T−1)`, then pulses control registers at `4·T` (start), `4·(T+1)` (reset), `4·(T+2)` (sample_ready), polls `4·(T+3)` (ready), then reads the output spike words back from offsets `0 … 4·(T−1)` (bit *k* = class *k*; the notebook counts spikes per class and takes the argmax). T = 50 timesteps for the implemented 32–64–3 `model1_rate`.
 
+**Test setup** (FPGA board with Red Pitaya measuring the shunt voltage on the core rail):
+
+![FPGA test setup](images/fpga_test_setup.jpg)
+
 Utilization: **2,881 LUT, 2,895 FF, 8 BRAM** — plenty of the device left.
 
 ![Resource utilization](images/utilisasi_fpga.png)
