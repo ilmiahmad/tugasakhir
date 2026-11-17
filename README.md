@@ -5,8 +5,6 @@ Undergraduate final project (Tugas Akhir, EE234899) — Electrical Engineering, 
 **Title:** *Low-Power Integrated Circuit Design for Spiking Neural Network Based Human Activity Recognition Using Photoplethysmography*
 **Author:** Ahmad Jabar Ilmi · **Advisors:** Astria Nur Irfansyah, S.T., M.Eng., Ph.D.; Prof. Dr. Muhammad Rivai, S.T., M.T.
 
-> **Ringkasan (ID):** Implementasi Spiking Neural Network (SNN) berbasis neuron Leaky Integrate-and-Fire (LIF) pada FPGA untuk klasifikasi aktivitas (rest / walk / run) dari sinyal PPG. Mencakup preprocessing (motion artifact cancelation), pelatihan SNN (rate & latency coding), RTL modular, dan pengujian di FPGA.
-
 ## Overview
 Wearable HAR from PPG is limited by power and inference cost. This project implements an LIF-based SNN accelerator:
 
