@@ -54,8 +54,6 @@ Pre-generated networks are in `rtl/generated/` (`build_SNN`, `build_rate_SNN_rat
 
 **FPGA** – Vivado 2023.2, Zynq-7000 board: create a project, add `fpga/srcs/rtl`, `fpga/axi_ip`, then `source fpga/design_2_32_64_3.tcl` to rebuild the block design. A prebuilt `fpga/design_2_32_64_3.bit/.hwh` pair can be loaded directly from PYNQ with `fpga/pynq/snn_test_FPGA.ipynb`. Spike inputs (`x_test_spikes.npy`, `y_test_spikes.npy`) come from the training notebook.
 
-## Not included
-Thesis book, proposal, posters, slides and papers (personal/signed documents), the third-party dataset, and Vivado/Verilator build output.
 
 ## Citation / credits
 Dataset: H. Lee, H. Chung, J. Lee, IEEE Sensors J., doi:10.1109/JSEN.2018.2879970 (BAMI Lab, Wonkwang University).
