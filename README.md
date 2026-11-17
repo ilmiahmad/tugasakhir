@@ -1,9 +1,6 @@
 # SNN-based Human Activity Recognition from PPG on FPGA
 
-Undergraduate final project (Tugas Akhir, EE234899) — Electrical Engineering, Institut Teknologi Sepuluh Nopember (ITS), Surabaya, 2025.
-
-**Title:** *Low-Power Integrated Circuit Design for Spiking Neural Network Based Human Activity Recognition Using Photoplethysmography*
-**Author:** Ahmad Jabar Ilmi · **Advisors:** Astria Nur Irfansyah, S.T., M.Eng., Ph.D.; Prof. Dr. Muhammad Rivai, S.T., M.T.
+Undergraduate final project
 
 ## Overview
 Wearable HAR from PPG is limited by power and inference cost. This project implements an LIF-based SNN accelerator:
