@@ -10,7 +10,7 @@ Undergraduate final project (Tugas Akhir, EE234899) — Electrical Engineering, 
 ## Overview
 Wearable HAR from PPG is limited by power and inference cost. This project implements an LIF-based SNN accelerator:
 
-1. **Preprocessing** – PPG motion-artifact cancelation (MAC) using accelerometer/gyroscope; raises accuracy from 34.9 % to 82 % (rest / walk / run).
+1. **Preprocessing** – PPG motion-artifact cancelation (MAC) using the gyroscope as motion reference; raises accuracy from 34.9 % to 82 % (rest / walk / run).
 2. **Training** – snnTorch, rate vs. latency spike coding, offline; weights quantized to fixed-point **Q2.6**.
 3. **RTL** – modular SystemVerilog (neuron / layer / network, FSM control units). A Python generator (veriloggen) emits a network for any neuron count and layer count; verified with cocotb + Verilator.
 4. **FPGA** – AXI-Lite IP in a Zynq block design (Vivado 2023.2), driven from PYNQ; power measured on the FPGA core rail.
@@ -20,7 +20,7 @@ Wearable HAR from PPG is limited by power and inference cost. This project imple
 |---|---|
 | Offline accuracy (rate, model 1 / model 2; latency model 1) | 82.80 % / 85.2 % / 85.3 % |
 | RTL simulation accuracy (rate 1 / rate 2 / latency 1) | 81.64 % / 84.4 % / 67.0 % |
-| FPGA accuracy (Q2.6, rate model 1) | **81.60 %** (1.07 % below offline) |
+| FPGA accuracy (Q2.6, rate model 1) | **81.60 %** (1.07 % below the Q2.6 simulation, 82.67 %; 1.2 % below float offline, 82.80 %) |
 | Mean inference latency | 15.608 ms (15.522 ms PS I/O + 0.086 ms SNN core on PL) |
 | Mean energy per inference | **0.462 mJ** (SNN in software on the PS: 1.18 mJ) |
 
